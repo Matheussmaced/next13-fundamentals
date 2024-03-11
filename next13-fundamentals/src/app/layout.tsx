@@ -16,7 +16,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div>Cabeçalho</div>
+
+        {children}
+      </body>
     </html>
   )
 }
+
+// sempre que eu quiser que algo seja compartilhado em todas as paginas, utilizo o layout
