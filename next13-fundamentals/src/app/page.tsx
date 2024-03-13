@@ -14,6 +14,10 @@ export default async function Home() {
   // não posso fazer esse tipo de chamada para dados que precisam ser carregados dado a alguma ação do usuario, por exemplo clicar em um botão
   // para carregar uma informação da API
 
+  // Streaming SSR => Ler/escrever dados de forma parcial + Server-side Rendering
+
+  // Renderizar um componente pelo lado do servidor de forma PARCIAL
+
   return (
     <>
       <pre> {JSON.stringify(user, null, 2)} </pre>
