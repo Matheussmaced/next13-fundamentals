@@ -4,6 +4,8 @@
 import { useParams } from 'next/navigation'
 import AddToCart from './add-to-cart-button'
 
+import TesteBoundaries from './teste-boundaries'
+
 // Server Components => toda rota criada com next é server component, que a gente não usa JavaScript no lado do cliente
 
 // Server Components => A gente não usa JavaScript no lado do cliente (navegador)
@@ -13,6 +15,9 @@ import AddToCart from './add-to-cart-button'
 // para requerir, posso utilizar o useEfecct como demostrado abaixo
 
 // se vou ter alguma hiperatividade como um botão, se for possivel isola-lo, é melhor para abstrair o maximo do pode do next com server Components
+
+// se eu crio um componente e coloco ele aqui, mesmo que tenha algum evento utilizando javascript, não preciso colocar 'use-client' pois já tenho aqui
+// client boundaries = todos os componentes criados a partir desse componente, sera use client
 
 export default function Product() {
   const params = useParams()
@@ -42,7 +47,9 @@ export default function Product() {
         <p>Tamanho: {tamanho}</p>
         <p>Nome: {nome}</p>
 
-        <AddToCart />
+        <AddToCart>
+          <TesteBoundaries />
+        </AddToCart>
       </div>
     </>
   )
