@@ -2,7 +2,7 @@
 // irá ser enviado para o navegador
 
 import { useParams } from 'next/navigation'
-import { useEffect } from 'react'
+import AddToCart from './add-to-cart-button'
 
 // Server Components => toda rota criada com next é server component, que a gente não usa JavaScript no lado do cliente
 
@@ -17,7 +17,7 @@ import { useEffect } from 'react'
 export default function Product() {
   const params = useParams()
 
-  useEffect(() => {
+  /* useEffect(() => {
     const req = async () => {
       await new Promise((resolve) => setTimeout(resolve, 2000))
 
@@ -28,18 +28,12 @@ export default function Product() {
     }
 
     req()
-  }, [])
-
-  console.log()
+  }, []) */
 
   const [id = '', tamanho = '', nome = ''] = Array.from(params.data || [])
   // const [id,tamanho,nome] = params.data
 
   console.log(params)
-
-  function addToCart() {
-    console.log('adicionou ao carrinho')
-  }
 
   return (
     <>
@@ -48,7 +42,7 @@ export default function Product() {
         <p>Tamanho: {tamanho}</p>
         <p>Nome: {nome}</p>
 
-        <button onClick={addToCart}>Adicionar ao carrinho</button>
+        <AddToCart />
       </div>
     </>
   )
